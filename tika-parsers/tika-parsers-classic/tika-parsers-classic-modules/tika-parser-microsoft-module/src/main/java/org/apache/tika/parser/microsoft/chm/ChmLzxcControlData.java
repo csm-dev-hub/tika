@@ -244,18 +244,18 @@ public class ChmLzxcControlData implements ChmAccessor<ChmLzxcControlData> {
      */
     public String toString() {
         StringBuilder sb = new StringBuilder();
+        String lineSeparator = System.getProperty("line.separator");
+
         sb.append("size(unknown):=" + this.getSize() + ", ");
         sb.append("signature(Compression type identifier):="
                 + new String(this.getSignature(), UTF_8) + ", ");
-        sb.append("version(Possibly numeric code for LZX):="
-                + this.getVersion() + System.getProperty("line.separator"));
+        sb.append("version(Possibly numeric code for LZX):=" + this.getVersion() + lineSeparator);
         sb.append("resetInterval(The Huffman reset interval):="
                 + this.getResetInterval() + ", ");
         sb.append("windowSize:=" + this.getWindowSize() + ", ");
         sb.append("windowsPerReset(unknown (sometimes 2, sometimes 1, sometimes 0):="
                 + this.getWindowsPerReset() + ", ");
-        sb.append("unknown_18:=" + this.getUnknown_18()
-                + System.getProperty("line.separator"));
+        sb.append("unknown_18:=" + this.getUnknown_18() + lineSeparator);
         return sb.toString();
     }
 

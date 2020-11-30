@@ -105,41 +105,26 @@ public class ChmLzxState implements Cloneable {
      */
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("actual decoding window:=" + getWindow()
-                + System.getProperty("line.separator"));
-        sb.append("window size (32Kb through 2Mb):=" + getWindowSize()
-                + System.getProperty("line.separator"));
-        sb.append("current offset within the window:=" + getWindowPosition()
-                + System.getProperty("line.separator"));
-        sb.append("number of main tree elements:=" + getMainTreeElements()
-                + System.getProperty("line.separator"));
-        sb.append("have we started decoding at all yet?:=" + getHadStarted()
-                + System.getProperty("line.separator"));
-        sb.append("type of this block:=" + getBlockType()
-                + System.getProperty("line.separator"));
-        sb.append("uncompressed length of this block:=" + getBlockLength()
-                + System.getProperty("line.separator"));
-        sb.append("uncompressed bytes still left to decode:="
-                + getBlockRemaining() + System.getProperty("line.separator"));
-        sb.append("the number of CFDATA blocks processed:=" + getFramesRead()
-                + System.getProperty("line.separator"));
-        sb.append("magic header value used for transform:="
-                + getIntelFileSize() + System.getProperty("line.separator"));
-        sb.append("current offset in transform space:="
-                + getIntelCurrentPossition()
-                + System.getProperty("line.separator"));
-        sb.append("have we seen any translatable data yet?:=" + getIntelState()
-                + System.getProperty("line.separator"));
-        sb.append("R0 for the LRU offset system:=" + getR0()
-                + System.getProperty("line.separator"));
-        sb.append("R1 for the LRU offset system:=" + getR1()
-                + System.getProperty("line.separator"));
-        sb.append("R2 for the LRU offset system:=" + getR2()
-                + System.getProperty("line.separator"));
-        sb.append("main tree length:=" + getMainTreeLengtsTable().length
-                + System.getProperty("line.separator"));
-        sb.append("secondary tree length:=" + getLengthTreeLengtsTable().length
-                + System.getProperty("line.separator"));
+        String lineSeparator = System.getProperty("line.separator");
+
+        sb.append("actual decoding window:=" + getWindow() + lineSeparator);
+        sb.append("window size (32Kb through 2Mb):=" + getWindowSize() + lineSeparator);
+        sb.append("current offset within the window:=" + getWindowPosition() + lineSeparator);
+        sb.append("number of main tree elements:=" + getMainTreeElements() + lineSeparator);
+        sb.append("have we started decoding at all yet?:=" + getHadStarted() + lineSeparator);
+        sb.append("type of this block:=" + getBlockType() + lineSeparator);
+        sb.append("uncompressed length of this block:=" + getBlockLength() + lineSeparator);
+        sb.append("uncompressed bytes still left to decode:=" + getBlockRemaining() + lineSeparator);
+        sb.append("the number of CFDATA blocks processed:=" + getFramesRead() + lineSeparator);
+        sb.append("magic header value used for transform:=" + getIntelFileSize() + lineSeparator);
+        sb.append("current offset in transform space:=" + getIntelCurrentPossition() + lineSeparator);
+        sb.append("have we seen any translatable data yet?:=" + getIntelState() + lineSeparator);
+        sb.append("R0 for the LRU offset system:=" + getR0() + lineSeparator);
+        sb.append("R1 for the LRU offset system:=" + getR1() + lineSeparator);
+        sb.append("R2 for the LRU offset system:=" + getR2() + lineSeparator);
+        sb.append("main tree length:=" + getMainTreeLengtsTable().length + lineSeparator);
+        sb.append("secondary tree length:=" + getLengthTreeLengtsTable().length + lineSeparator);
+
         return sb.toString();
     }
 

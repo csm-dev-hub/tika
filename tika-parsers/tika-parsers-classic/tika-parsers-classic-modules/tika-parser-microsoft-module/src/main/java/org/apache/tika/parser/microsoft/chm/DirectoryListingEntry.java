@@ -71,11 +71,14 @@ public class DirectoryListingEntry {
 
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("name_length:=" + getNameLength() + System.getProperty("line.separator"));
-        sb.append("name:=" + getName() + System.getProperty("line.separator"));
-        sb.append("entryType:=" + getEntryType() + System.getProperty("line.separator"));
-        sb.append("offset:=" + getOffset() + System.getProperty("line.separator"));
+        String lineSeparator = System.getProperty("line.separator");
+
+        sb.append("name_length:=" + getNameLength() + lineSeparator);
+        sb.append("name:=" + getName() + lineSeparator);
+        sb.append("entryType:=" + getEntryType() + lineSeparator);
+        sb.append("offset:=" + getOffset() + lineSeparator);
         sb.append("length:=" + getLength());
+
         return sb.toString();
     }
     
